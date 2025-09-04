@@ -17,6 +17,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -31,8 +40,8 @@
             bindings = <
 &kp TAB     &kp Q  &kp W  &kp F     &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y       &kp SQT    &kp BSPC
 &kp ESCAPE  &kp A  &kp R  &kp S     &kp T  &kp G        &kp M    &kp N  &kp E      &kp I       &kp O      &kp SEMICOLON
-&kp LSHFT   &kp Z  &kp X  &kp C     &kp D  &kp V        &kp K    &kp H  &kp COMMA  &kp PERIOD  &kp SLASH  &kp RCTRL
-                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&kp LSHFT   &kp Z  &kp X  &kp C     &kp D  &kp V        &kp K    &kp H  &kp COMMA  &kp PERIOD  &kp SLASH  &kp RIGHT_SHIFT
+                          &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RCTRL
             >;
         };
 
@@ -44,10 +53,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1     &kp N2  &kp N3    &kp N4  &kp N5       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &kp BSPC
-&kp ESCAPE  &kp LC(B)  &trans  &trans    &trans  &trans       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans     &trans  &trans    &trans  &trans       &trans    &kp LC(D)  &kp LC(U)  &trans     &trans  &trans
-                               &kp LGUI  &trans  &kp SPACE    &kp RET   &trans     &kp RALT
+&trans  &kp N1     &kp N2  &kp N3    &kp N4  &kp N5       &kp N6    &kp N7             &kp N8     &kp N9     &kp N0  &trans
+&trans  &kp LC(B)  &trans  &trans    &trans  &trans       &kp LEFT  &kp DOWN           &kp UP     &kp RIGHT  &trans  &trans
+&trans  &trans     &trans  &trans    &trans  &trans       &trans    &kp LC(D)          &kp LC(U)  &trans     &trans  &trans
+                           &kp LGUI  &trans  &kp SPACE    &kp RET   &kp RIGHT_COMMAND  &kp RALT
             >;
         };
 
@@ -59,14 +68,15 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp EXCL       &kp AT          &kp HASH          &kp DLLR              &kp PERCENT    &kp CARET  &kp AMPS               &kp ASTRK          &kp EQUAL        &trans            &kp BSPC
-&kp ESCAPE  &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &trans         &trans     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp GRAVE
-&kp LSHFT   &kp TILDE      &kp GRAVE       &kp PLUS          &trans                &trans         &trans     &trans                 &kp PIPE           &kp MINUS        &kp BACKSLASH     &kp TILDE
-                                           &kp LGUI          &trans                &kp SPACE      &kp RET    &trans                 &kp RALT
+&trans  &kp EXCL       &kp AT          &kp HASH          &kp DLLR              &kp PERCENT    &kp CARET  &kp AMPS               &kp ASTRK          &kp EQUAL        &trans            &trans
+&trans  &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &trans         &trans     &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &trans
+&trans  &kp TILDE      &kp GRAVE       &kp PLUS          &trans                &trans         &trans     &trans                 &kp PIPE           &kp MINUS        &kp BACKSLASH     &trans
+                                       &kp LGUI          &trans                &kp SPACE      &kp RET    &trans                 &kp RALT
             >;
         };
     };
 };
+
 
 &led_strip {
     chain-length = <27>;
